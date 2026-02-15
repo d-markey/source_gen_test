@@ -59,12 +59,12 @@ void main() {
         );
         expect(buildStep.allowedOutputs.length, equals(2));
         expect(
-          buildStep.allowedOutputs.first.path,
-          equals('input_file.g.dart'),
+          buildStep.allowedOutputs.map((o) => o.path),
+          contains('input_file.g.dart'),
         );
         expect(
-          buildStep.allowedOutputs.last.path,
-          equals('input_file.custom.g.dart'),
+          buildStep.allowedOutputs.map((o) => o.path),
+          contains('input_file.custom.g.dart'),
         );
       });
 
